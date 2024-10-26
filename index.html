@@ -26,7 +26,6 @@
   input[type=range].height-slider {
     accent-color: blue;
   }
-  
 </style>
 <body>
   <main>
@@ -45,8 +44,9 @@
     function setup() {
       createCanvas(windowWidth, windowHeight); // Make the canvas full-screen
       
-      for (let i = 0; i < 100; i++) {
-        stars.push({ x: random(width), y: random(height / 2) });
+      // Create a larger number of stars to cover the whole canvas
+      for (let i = 0; i < 200; i++) {
+        stars.push({ x: random(width), y: random(height) });
       }
       
       angleSlider = createSlider(0, 90, 45);
@@ -169,7 +169,7 @@
       fill(255);
       noStroke();
       for (let star of stars) {
-        ellipse(star.x, star.y, 2, 2);
+        ellipse(star.x, star.y, 2, 2); // Adjust the size if needed
       }
     }
   </script>
